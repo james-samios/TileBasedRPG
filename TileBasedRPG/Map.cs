@@ -12,7 +12,7 @@ namespace TileBasedRPG
 
         public Tile[,] LoadMap()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"map.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"../../map.txt");
 
             foreach (string line in lines)
             {
