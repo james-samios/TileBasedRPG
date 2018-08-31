@@ -8,10 +8,11 @@ namespace TileBasedRPG
 {
     class Map
     {
-        Tile[,] tiles = new Tile[5, 5];
+        Tile[,] tiles = new Tile[15, 15];
 
         public Tile[,] LoadMap()
         {
+            // main map - building levels coming after.
             string[] lines = System.IO.File.ReadAllLines(@"../../map.txt");
 
             foreach (string line in lines)
@@ -48,44 +49,60 @@ namespace TileBasedRPG
             return tiles[x, y].canpass;
         }
 
-        public string GetColor(string floor)
+        public string GetTile(string floor)
         {
-            string returncolor = "";
+            string returntile = "";
 
             if (floor == "Grass")
             {
-                returncolor = "Green";
+                returntile = "Grass";
             }
-            else if (floor == "Mountain")
+            else if (floor == "GreyFloor")
             {
-                returncolor = "DarkSlateGray";
+                returntile = "GreyFloor";
             }
             else if (floor == "Forest")
             {
-                returncolor = "DarkGreen";
+                returntile = "Forest";
             }
             else if (floor == "Lava")
             {
-                returncolor = "Red";
+                returntile = "Lava";
             }
-            else if (floor == "Coffee")
+            else if (floor == "GreyWall")
             {
-                returncolor = "SaddleBrown";
+                returntile = "GreyWall";
             }
-            else if (floor == "Cafe")
+            else if (floor == "MetalDoor")
             {
-                returncolor = "DarkKhaki";
+                returntile = "MetalDoor1";
             }
-            else if (floor == "Banananana")
+            else if (floor == "Wood")
             {
-                returncolor = "DarkGoldenrod";
+                returntile = "Wood";
+            }
+            else if (floor == "RedFloor")
+            {
+                returntile = "RedFloor";
+            }
+            else if (floor == "RedWall")
+            {
+                returntile = "RedWall";
+            }
+            else if (floor == "Water")
+            {
+                returntile = "Water";
+            }
+            else if (floor == "Chest")
+            {
+                returntile = "Chest1";
             }
             else
             {
-                returncolor = "Fuchsia";
+                returntile = "Forest";
             }
 
-            return returncolor;
+            return returntile;
         }
 
     }

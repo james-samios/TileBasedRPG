@@ -12,7 +12,7 @@ namespace TileBasedRPG
 {
     public partial class Form1 : Form
     {
-        static int mapsize = 5;
+        static int mapsize = 15;
         int boxsize = 30;
         Map map = new Map();
         Player player = new Player();
@@ -56,14 +56,14 @@ namespace TileBasedRPG
                 && map.canPass(player.x + x, player.y + y))
             {
                 // rewrite color to map
-                picmap[player.x, player.y].BackColor = Color.FromName(map.GetColor(map.getFloor(player.x, player.y)));
+                picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/" + map.GetTile(map.getFloor(player.x, player.y)) + ".png");
 
                 // change player x and y
                 player.x += x;
                 player.y += y;
 
                 // write color of player to map
-                picmap[player.x, player.y].BackColor = Color.Azure;
+                picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Lava.png");
 
                 //debugstuff();
 
@@ -94,7 +94,7 @@ namespace TileBasedRPG
             player.x = 0;
             player.y = 0;
             player.name = "Steve";
-            picmap[player.x, player.y].BackColor = Color.Beige;
+            picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Lava.png");
         }
 
         private void setupMap()
@@ -110,7 +110,8 @@ namespace TileBasedRPG
                 pic.Location = new Point((t.x * boxsize) + 10, (t.y * boxsize) + 10);
                 pic.Size = new Size(boxsize, boxsize);
 
-                pic.BackColor = Color.FromName(map.GetColor(t.floor));
+                //pic.BackColor = Color.FromName(map.GetColor(t.floor));
+                pic.Image = Image.FromFile(@"../../Tiles/" + map.GetTile(t.floor) + ".png");
 
                 Controls.Add(pic);
                 picmap[t.x, t.y] = pic;
