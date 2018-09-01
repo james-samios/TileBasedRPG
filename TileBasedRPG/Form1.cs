@@ -17,12 +17,18 @@ namespace TileBasedRPG
         Map map = new Map();
         Player player = new Player();
         PictureBox[,] picmap = new PictureBox[mapsize, mapsize];
+        int health = 100;
+        int ability = 1;
 
 
         public Form1()
         {
             InitializeComponent();
             this.KeyPress += Form1_KeyPress;
+            abilityBar.ForeColor = Color.LightSeaGreen;
+            abilityBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            healthBar.ForeColor = Color.Green;
+            healthBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -55,15 +61,16 @@ namespace TileBasedRPG
                 && player.y + y >= 0 && player.y + y < mapsize
                 && map.canPass(player.x + x, player.y + y))
             {
-                // rewrite color to map
+                // rewrite image to map
                 picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/" + map.GetTile(map.getFloor(player.x, player.y)) + ".png");
 
                 // change player x and y
                 player.x += x;
                 player.y += y;
 
-                // write color of player to map
-                picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Lava.png");
+                // write image of player to map + tile for backdrop
+                picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Player.png");
+                picmap[player.x, player.y].BackgroundImage = Image.FromFile(@"../../Tiles/" + map.GetTile(map.getFloor(player.x, player.y)) + ".png");
 
                 //debugstuff();
 
@@ -75,9 +82,14 @@ namespace TileBasedRPG
 
         private void checkEvent()
         {
+            string chest = "You found ITEM!";
             if (map.getEvent(player.x, player.y) == "Monster")
             {
                 MessageBox.Show(player.warcry);
+            }
+            else if (map.getEvent(player.x, player.y) == "Chest")
+            {
+                MessageBox.Show(chest);
             }
         }
 
@@ -91,10 +103,11 @@ namespace TileBasedRPG
         private void setupPlayer()
         {
             player.warcry = "Cry havoc and let slip the dogs of war!";
-            player.x = 0;
-            player.y = 0;
+            player.x = 8;
+            player.y = 5;
             player.name = "Steve";
-            picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Lava.png");
+            picmap[player.x, player.y].Image = Image.FromFile(@"../../Tiles/Player.png");
+            picmap[player.x, player.y].BackgroundImage = Image.FromFile(@"../../Tiles/" + map.GetTile(map.getFloor(player.x, player.y)) + ".png");
         }
 
         private void setupMap()
@@ -110,9 +123,7 @@ namespace TileBasedRPG
                 pic.Location = new Point((t.x * boxsize) + 10, (t.y * boxsize) + 10);
                 pic.Size = new Size(boxsize, boxsize);
 
-                //pic.BackColor = Color.FromName(map.GetColor(t.floor));
                 pic.Image = Image.FromFile(@"../../Tiles/" + map.GetTile(t.floor) + ".png");
-
                 Controls.Add(pic);
                 picmap[t.x, t.y] = pic;
             }
@@ -131,6 +142,11 @@ namespace TileBasedRPG
         } */
 
         private void stripFloor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void abilityBar_Click(object sender, EventArgs e)
         {
 
         }

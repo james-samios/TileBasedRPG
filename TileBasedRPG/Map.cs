@@ -97,6 +97,16 @@ namespace TileBasedRPG
             {
                 returntile = "Chest1";
             }
+            else if (floor == "Monster")
+            {
+                string[] monsters = new string[3];
+                monsters[0] = "Ghost";
+                monsters[1] = "Slime";
+                monsters[2] = "Skeleton";
+                Random rand = new Random();
+
+                returntile = (monsters[rand.Next(0,3)]);
+            }
             else
             {
                 returntile = "Forest";
