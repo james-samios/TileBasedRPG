@@ -1,0 +1,12 @@
+armour|DemonBreastplate|40|5|10|0
+armour|BattleplateofAncientPower|50|10|5|0
+armour|SinisterLeatherVest|30|5|5|10
+armour|ProtectorofCarnage|40|10|0|10
+shield|KingsDefender|20|5|15|0
+shield|Glacier|30|5|20|-5
+shield|DefenderOakWall|40|0|20|5
+shield|JadeInfusedOakGreatshield|50|5|5|5
+sword|Worldslayer|10|8|2|0
+sword|Oathbreaker|20|10|0|2
+sword|SteelReaver|10|5|5|5
+sword|SkewerOfCorruption|20|10|-5|10

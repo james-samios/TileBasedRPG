@@ -11,13 +11,12 @@ namespace TileBasedRPG
         public int x { get; set; }
         public int y { get; set; }
         public string name { get; set; }
-        public string warcry { get; set; }
 
+        public int health { get; set; }
         public int strength { get; set; }
-        public int dexterity { get; set; }
-        public int constitution { get; set; }
-        public int intelligence { get; set; }
-        public int wisdom { get; set; }
-        public int charisma { get; set; }
+        public int ability { get; set; }
+        public int armour { get; set; }
+        public int speed { get; set; }
+        public int defence { get; set; }
     }
 }
