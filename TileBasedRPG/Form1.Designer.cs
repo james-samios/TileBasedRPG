@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.healthLbl = new System.Windows.Forms.Label();
             this.armourBar = new System.Windows.Forms.ProgressBar();
-            this.abilityBar = new System.Windows.Forms.ProgressBar();
-            this.abilityLbl = new System.Windows.Forms.Label();
             this.weaponLabel = new System.Windows.Forms.Label();
             this.healthBar = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +59,7 @@
             this.healthLbl.AutoSize = true;
             this.healthLbl.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.healthLbl.ForeColor = System.Drawing.Color.Blue;
-            this.healthLbl.Location = new System.Drawing.Point(468, 384);
+            this.healthLbl.Location = new System.Drawing.Point(467, 370);
             this.healthLbl.Name = "healthLbl";
             this.healthLbl.Size = new System.Drawing.Size(60, 16);
             this.healthLbl.TabIndex = 1;
@@ -70,30 +68,11 @@
             // 
             // armourBar
             // 
-            this.armourBar.Location = new System.Drawing.Point(530, 384);
+            this.armourBar.Location = new System.Drawing.Point(530, 370);
             this.armourBar.Name = "armourBar";
-            this.armourBar.Size = new System.Drawing.Size(254, 16);
+            this.armourBar.Size = new System.Drawing.Size(227, 25);
             this.armourBar.TabIndex = 2;
             this.armourBar.Click += new System.EventHandler(this.healthBar_Click);
-            // 
-            // abilityBar
-            // 
-            this.abilityBar.Location = new System.Drawing.Point(530, 431);
-            this.abilityBar.Name = "abilityBar";
-            this.abilityBar.Size = new System.Drawing.Size(254, 16);
-            this.abilityBar.TabIndex = 4;
-            this.abilityBar.Click += new System.EventHandler(this.abilityBar_Click);
-            // 
-            // abilityLbl
-            // 
-            this.abilityLbl.AutoSize = true;
-            this.abilityLbl.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abilityLbl.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.abilityLbl.Location = new System.Drawing.Point(468, 431);
-            this.abilityLbl.Name = "abilityLbl";
-            this.abilityLbl.Size = new System.Drawing.Size(54, 16);
-            this.abilityLbl.TabIndex = 3;
-            this.abilityLbl.Text = "Ability:";
             // 
             // weaponLabel
             // 
@@ -107,9 +86,9 @@
             // 
             // healthBar
             // 
-            this.healthBar.Location = new System.Drawing.Point(530, 406);
+            this.healthBar.Location = new System.Drawing.Point(530, 401);
             this.healthBar.Name = "healthBar";
-            this.healthBar.Size = new System.Drawing.Size(254, 16);
+            this.healthBar.Size = new System.Drawing.Size(227, 23);
             this.healthBar.TabIndex = 7;
             // 
             // label3
@@ -117,7 +96,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(468, 406);
+            this.label3.Location = new System.Drawing.Point(468, 401);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 6;
@@ -125,9 +104,9 @@
             // 
             // strengthBar
             // 
-            this.strengthBar.Location = new System.Drawing.Point(530, 362);
+            this.strengthBar.Location = new System.Drawing.Point(530, 339);
             this.strengthBar.Name = "strengthBar";
-            this.strengthBar.Size = new System.Drawing.Size(254, 16);
+            this.strengthBar.Size = new System.Drawing.Size(227, 25);
             this.strengthBar.TabIndex = 9;
             // 
             // label4
@@ -135,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(468, 362);
+            this.label4.Location = new System.Drawing.Point(468, 343);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 8;
@@ -143,9 +122,9 @@
             // 
             // defenceBar
             // 
-            this.defenceBar.Location = new System.Drawing.Point(530, 340);
+            this.defenceBar.Location = new System.Drawing.Point(531, 308);
             this.defenceBar.Name = "defenceBar";
-            this.defenceBar.Size = new System.Drawing.Size(254, 16);
+            this.defenceBar.Size = new System.Drawing.Size(227, 25);
             this.defenceBar.TabIndex = 11;
             // 
             // label5
@@ -153,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label5.Location = new System.Drawing.Point(468, 340);
+            this.label5.Location = new System.Drawing.Point(468, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 10;
@@ -181,21 +160,21 @@
             // 
             // speedBar
             // 
-            this.speedBar.Location = new System.Drawing.Point(530, 318);
+            this.speedBar.Location = new System.Drawing.Point(530, 277);
             this.speedBar.Name = "speedBar";
-            this.speedBar.Size = new System.Drawing.Size(254, 16);
+            this.speedBar.Size = new System.Drawing.Size(227, 25);
             this.speedBar.TabIndex = 15;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.label8.Location = new System.Drawing.Point(468, 318);
+            this.label8.Location = new System.Drawing.Point(468, 277);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Speed:";
+            this.label8.Text = "Exp :";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Form1
             // 
@@ -213,8 +192,6 @@
             this.Controls.Add(this.healthBar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.weaponLabel);
-            this.Controls.Add(this.abilityBar);
-            this.Controls.Add(this.abilityLbl);
             this.Controls.Add(this.armourBar);
             this.Controls.Add(this.healthLbl);
             this.Controls.Add(this.label1);
@@ -231,8 +208,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label healthLbl;
         private System.Windows.Forms.ProgressBar armourBar;
-        private System.Windows.Forms.ProgressBar abilityBar;
-        private System.Windows.Forms.Label abilityLbl;
         private System.Windows.Forms.Label weaponLabel;
         private System.Windows.Forms.ProgressBar healthBar;
         private System.Windows.Forms.Label label3;
